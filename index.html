@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="main.css">
+
+
+    <style>
+       #copytext{
+        transform: scale(0);
+        color:rgb(255, 242, 62);
+        background-color: rgb(168, 45, 168);
+        
+       }
+
+       #copytext.dikhjao{
+        transform:scale(1);
+       }
+
+          
+
+    </style>
+</head>
+<body class="flex  justify-center items-center h-screen w-screen bg-gradient-to-r from-purple-600 to-purple-950" >
+
+    <!-- main-page -->
+    <div class="flex flex-col gap-5 ">
+    
+        <!-- custom attribute -->
+
+        <!-- kisi bhi element ko javascript me fetch krne k liye 
+        element ke andar koi bhi naam define kr do jese fetching naam hai
+        usko fir query selector se select kr lo ('[fetching]'); ese -->
+
+
+        <h1 class="text-center font-bold text-4xl mb-5 text-zinc-200">Password Generator</h1>
+
+        <!-- display box -->
+        <div class="flex p-5 justify-between font-bold text-xl bg-black bg-opacity-60 rounded-lg">
+
+            <input password-box  class=" text-zinc-200 bg-transparent border-none outline-none" readonly placeholder="Password" >
+
+            <button class="relative">
+                <span copy-msg id="copytext" class="absolute text-xs -right-1 -top-10 text-zinc-200 font-bold p-2 bg-black bg-opacity-60 rounded-lg "></span>
+                <img copy-icon class="rounded-lg" src="copy-icon.png" alt="" width="28" height="28">
+                
+            </button>
+        </div>
+
+        <!-- input container -->
+
+        <div class="flex flex-col gap-5 p-5 bg-black bg-opacity-60 rounded-lg"> 
+
+            <!-- password length -->
+            <div class="flex justify-between">
+                <p class="text-zinc-200 font-bold text-lg">Password Length</p>
+                <p password-length class="text-zinc-200 font-bold text-lg">0</p>
+            </div>
+
+            <!-- slider -->
+            <input id="slider" class="mb-2 mt-2" min="1" max="20" type="range">
+
+            <!-- check boxes -->
+
+            <div class="-mb-3">
+                <input id="uppercase" class="h-4 w-4  " type="checkbox" for="uppercase">
+                <label class="text-zinc-200 font-bold text-lg ml-5 mr-14 " for="uppercase">Includes Uppercase Letters</label>
+            </div>
+
+            <div class="-mb-3">
+                <input id="lowercase" class="h-4 w-4  " type="checkbox" for="lowercase">
+                <label class="text-zinc-200 font-bold text-lg ml-5 mr-14 " for="lowercase">Includes Lowercase Letters</label>
+            </div>
+
+            <div class="-mb-3">
+                <input id="numbers" class="h-4 w-4  " type="checkbox" for="numbers">
+                <label class="text-zinc-200 font-bold text-lg ml-5 mr-14" for="numbers">Includes Numbers </label>
+            </div>
+
+            <div>
+                <input id="symbols" class="h-4 w-4  " type="checkbox" for="symbols">
+                <label class="text-zinc-200 font-bold text-lg ml-5 mr-14" for="symbols">Includes Symbols</label>
+            </div>
+
+
+            <!-- strength section -->
+
+            <section class="mt-2 mb-2 flex justify-between ">
+                <p class="text-zinc-200 font-bold text-lg" > Strength </p>
+                <div strength class="h-5 w-5 rounded-full  bg-white"></div>
+            </section>
+
+
+            <!-- generate password button  -->
+
+            <button generateButton class="bg-gradient-to-tr from-fuchsia-500 to-fuchsia-800  w-full border-b-4 text-yellow-300 font-bold text-xl border-yellow-300 pt-2 pb-2 rounded-lg">Generate button</button>
+
+
+
+        </div>
+
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
